@@ -1,0 +1,73 @@
+أوامر تشغيل التطبيق من الترمنال
+=====================================
+
+## المتطلبات
+- Node.js 16+
+- npm
+- Python 3 (لتشغيل الواجهة الأمامية محليًا إن لزم)
+
+## الإعداد لأول مرة (Backend)
+```bash
+npm --prefix "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server" install
+cp "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server/.env.example" \
+   "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server/.env"
+npx --prefix "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server" prisma generate \
+  --schema "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server/prisma/schema.prisma"
+npx --prefix "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server" prisma db push \
+  --schema "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server/prisma/schema.prisma"
+npx --prefix "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server" prisma db seed \
+  --schema "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server/prisma/schema.prisma"
+```
+
+## الإعداد لأول مرة (Frontend)
+```bash
+npm --prefix "/Users/mdarwish/Personal/MediPol/leadapp/front 2" install
+```
+
+## تشغيل أثناء التطوير
+### Backend
+```bash
+npm --prefix "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server" run dev
+```
+
+### Frontend
+```bash
+npm --prefix "/Users/mdarwish/Personal/MediPol/leadapp/front 2" start
+```
+
+## أوامر Prisma شائعة
+```bash
+npx --prefix "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server" prisma generate \
+  --schema "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server/prisma/schema.prisma"
+npx --prefix "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server" prisma db push \
+  --schema "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server/prisma/schema.prisma"
+npx --prefix "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server" prisma migrate dev \
+  --schema "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server/prisma/schema.prisma"
+npx --prefix "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server" prisma db seed \
+  --schema "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server/prisma/schema.prisma"
+```
+
+## فتح قاعدة البيانات (Prisma Studio GUI)
+```bash
+npx --prefix "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server" prisma studio \
+  --port 5555 \
+  --schema "/Users/mdarwish/Personal/MediPol/leadapp/front 2/server/prisma/schema.prisma"
+```
+- العنوان: http://localhost:5555/
+- لا حاجة لتشغيل خادم قاعدة بيانات لأن SQLite ملف محلي.
+
+## الوصول للتطبيق
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:4000
+
+## فحص الحالة
+```bash
+curl http://localhost:4000/health
+```
+
+## بيانات تجريبية للدخول
+- البريد: admin@leadapp.com
+- كلمة المرور: admin123
+
+## إيقاف التطبيق
+اضغط Ctrl+C في كل نافذة ترمنال لإيقاف الخوادم
