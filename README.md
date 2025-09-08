@@ -105,3 +105,22 @@ CORS_ORIGIN="http://localhost:3000"
 ## Support
 
 For technical support, contact the development team or refer to the documentation.
+
+
+## 📄 Documentation
+
+### Handover Instructions
+- [English](handover-instructions-en.md)
+- [العربية](handover-instructions-ar.md)
+- [Türkçe](handover-instructions-tr.md)
+
+### Deployment Guide
+- [English](deployment-guide-en.md)
+- [العربية](deployment-guide-ar.md)
+- [Türkçe](deployment-guide-tr.md)
+
+---
+
+## 📢 Notes
+Please refer to the **Deployment Guide** in your preferred language before starting the setup.  
+For an overview of the project responsibilities and components, check the **Handover Instructions**.
